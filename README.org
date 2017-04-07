@@ -1,0 +1,10 @@
+* About
+To install elm and associated tools:
+
+#+BEGIN_SRC sh
+  npm i -g elm elm-oracle elm-test
+#+END_SRC
+
+Run tests with ~elm-test~ and try examples with ~elm-reactor~.
+
+To learn more read [[https://guide.elm-lang.org/][An Introduction to Elm]].
