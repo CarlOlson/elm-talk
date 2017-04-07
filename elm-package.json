@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "summary": "example code from a talk on elm",
-    "repository": "https://github.com/CarlOlson/elm-talk",
+    "repository": "https://github.com/CarlOlson/elm-talk.git",
     "license": "public domain",
     "source-directories": [
         "."
