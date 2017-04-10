@@ -14,6 +14,8 @@ main = Html.program
        , subscriptions = \x -> Sub.none
        }
 
+-- Model
+
 type alias Todo =
     { completed : Bool
     , message : String
@@ -25,14 +27,16 @@ type alias Model =
     , input : String
     }
 
+initModel : Model
+initModel = Model [] ""
+
+-- Update
+
 type Msg
     = Add String
     | Complete Int
     | Input String
     | NoOp
-
-initModel : Model
-initModel = Model [] ""
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
@@ -57,6 +61,8 @@ update msg model =
         NoOp ->
             model ! []
 
+-- View
+
 view : Model -> Html Msg
 view model =
     div [] (viewTodos (List.reverse model.todos) ++
@@ -80,6 +86,8 @@ viewTodos todos =
         [] -> []
         todo :: todos ->
             viewTodo todo :: viewTodos todos
+
+-- Helpers
 
 onEnter : Msg -> Html.Attribute Msg
 onEnter msg =
